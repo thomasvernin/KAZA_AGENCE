@@ -1,0 +1,25 @@
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
