@@ -1,0 +1,18 @@
+:root {
+    
+}
+
+// Styles for the Nav component
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--nav-gap);
+
+   
+
+    // Styles for the active link inside the Nav
+    &__link.active {
+        text-decoration: underline;
+        text-underline-offset: var(--nav-link-active-underline-offset);
+    }
+}

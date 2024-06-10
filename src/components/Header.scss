@@ -1,25 +1,24 @@
-header {
-    background-color: #007bff;
-    color: white;
-    padding: 1rem;
-  }
+:root {
+    --header-logo-width-min: 8rem;
+    --header-logo-width-max: 13rem;
+    --header-logo-width-viewport: 25vw;
+}
+
+// Styles for the Header component
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // Styles for the logo inside the Header
+    &__logo {
+        // Use clamp() to responsively size the logo
+        width: clamp(
+            var(--header-logo-width-min),
+            var(--header-logo-width-viewport),
+            var(--header-logo-width-max)
+        );
+    }
+}
   
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  nav li {
-    display: inline;
-    margin-right: 10px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
   

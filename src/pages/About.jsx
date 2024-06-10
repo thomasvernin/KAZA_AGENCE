@@ -1,11 +1,43 @@
-import React from 'react';
+import aboutBanner from '@/images/about-banner.jpg'
+import Collapes from '@/components/Collapes'
+import Banner from '@/components/Banner'
+import Loader from '@/components/Loader'
+import aboutData from '@/data/about.json'
+import { useFetchData } from '@/hooks/useFetchData'
+import './About.scss'
 
-const About = () => {
-  return (
-    <div>
-      <h1>About Page</h1>
-    </div>
-  );
-};
+/** 
+@returns {JSX.Element} 
+**/
+export default function About() {
+    const { isLoading, data } = useFetchData(aboutData)
 
-export default About;
+    return (
+        <main className="container">
+            <Banner title="À propos" image={aboutBanner} />
+
+            <section className="about-sections">
+                {isLoading ? (
+                    <Loader />
+                ) : !data ? (
+                    <div>Pas de données disponibles</div>
+                ) : (
+                    data.map((section, index) => (
+                        <Collapes
+                            key={index}
+                            title={section.title}
+                            content={section.content}
+                        />
+                    ))
+                )}
+            </section>
+        </main>
+    )
+}
+
+
+
+
+
+
+

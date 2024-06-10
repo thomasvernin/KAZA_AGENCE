@@ -1,36 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import logementsData from '../data/logements.json';
-import './Home.scss'; // Importe le fichier Sass pour les styles de Home
+import homeBanner from '@/images/home-banner.jpg' 
+import Banner from '@/components/Banner' 
+import Gallery from '@/components/Gallery' 
+import Loader from '@/components/Loader' 
+import accommodationsData from '@/data/logements.json' 
+import { useFetchData } from '@/hooks/useFetchData' 
+import './Home.scss' 
 
-const Home = () => {
-  const [logements, setLogements] = useState([]);
-
-  useEffect(() => {
-    setLogements(logementsData);
-  }, []);
-
-  return (
-    <div className="home">
-      <h1>Home Page</h1>
-      <div className="logements">
-        {logements.map(logement => (
-          <div key={logement.id} className="logement">
-            <h2>{logement.title}</h2>
-            <img src={logement.cover} alt={logement.title} />
-            <p>{logement.location}</p>
-            <p>Prix: {logement.price} € par nuit</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default Home;
-
-
-
-
+/**
+ * Rend le composant de la page d'accueil.
+ *
+ * @returns {JSX.Element} Le composant de la page d'accueil.
+ */
+export default function Home() {
+    const { isLoading, data } = useFetchData(accommodationsData) // Utilise le hook useFetchData pour récupérer les données des logements
+    return (
+        <main className="content container">
+            <Banner title="Chez vous, partout et ailleurs" image={homeBanner} /> {/* Affiche la bannière avec le titre */}
+            <section className="logements">
+                <h2 className="sr-only">Liste de logements</h2> {/* Titre pour l'accessibilité */}
+                {isLoading ? ( // Si les données sont en cours de chargement
+                    <Loader /> // Affiche le composant Loader
+                ) : !data ? ( // Si aucune donnée n'est disponible
+                    <div>Pas de données disponibles</div> // Affiche un message indiquant l'absence de données
+                ) : (
+                    <Gallery accommodations={data} /> // Affiche la galerie de logements avec les données récupérées
+                )}
+            </section>
+        </main>
+    )
+}
 
 
 

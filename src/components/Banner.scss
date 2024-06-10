@@ -1,0 +1,26 @@
+:root {
+    --banner-title-padding: 1rem;
+    --banner-title-font-size: clamp(1.5rem, 5vw, 3rem);
+    --banner-title-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    --banner-aspect-ratio: 1240 / 223;
+    --banner-background-color: rgba(0, 0, 0, 0.5);
+    --banner-min-height: 6.875rem;
+}
+
+// Styling for the banner component
+.banner {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: var(--banner-min-height);
+    border-radius: var(--banner-border-radius);
+    background-image: linear-gradient(
+            to bottom,
+            var(--banner-background-color),
+            var(--banner-background-color)
+        ),
+        var(--background-image);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}

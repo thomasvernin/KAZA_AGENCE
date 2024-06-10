@@ -1,12 +1,14 @@
-import { createRoot } from 'react-dom/client';
-import React from 'react';
-import App from './App';
+import { StrictMode } from 'react'
+import ReactDOM from 'react-dom/client'
+import { Router as Routes } from './routes/router'
 
-// Utilisation de createRoot pour le rendu de l'application
-createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
+/**
+Initialise et rend l'application.
+@returns {void}
+*/
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <StrictMode>
+        <Routes />
+    </StrictMode>
+)
 
