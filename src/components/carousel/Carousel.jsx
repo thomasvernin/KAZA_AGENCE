@@ -1,14 +1,14 @@
-import Chevron from '@/components/Chevron'
+import Chevron from '@/components/chevron/Chevron'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
 import './Carousel.scss'
 
 /**
- * Composant Carousel. Affiche un carrousel d'images.
- *
- * @param {Array} pictures - Un tableau d'URL d'images.
- * @returns {JSX.Element} Le composant Carousel rendu.
- */
+Composant Carousel. Affiche un carrousel d'images.
+
+@param {Array} pictures - Un tableau d'URL d'images.
+@returns {JSX.Element} Le composant Carousel rendu.
+*/
 export default function Carousel({ pictures }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
 

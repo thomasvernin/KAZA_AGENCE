@@ -2,8 +2,8 @@ import links from '@/data/mainNav.json'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import './Header.scss'
-import Logo from './Logo'
-import Nav from './Nav'
+import Logo from '../logo/Logo'
+import Nav from '../nav/Nav'
 
 /**
  * Représente le composant de l'en-tête de l'application.

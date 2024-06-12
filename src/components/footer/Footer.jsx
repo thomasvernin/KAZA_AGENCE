@@ -1,5 +1,6 @@
 import './Footer.scss'
-import Logo from './Logo'
+import Logo from '../logo/Logo';
+
 
 /**
  * Composant Footer.

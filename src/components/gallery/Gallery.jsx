@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import Card from './Cards'
+import Card from "../cards/Cards"
 import './Gallery.scss'
 
 /**
