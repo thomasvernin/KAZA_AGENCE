@@ -1,0 +1,41 @@
+@import "../../_vars.scss";
+
+
+:root {
+    --avatar-size: 2rem; 
+    --avatar-spacing: #{$spacing-small}; 
+    --avatar-font-size: clamp(0.875rem, 2vw, 1.125rem);
+    --avatar-color-text: #{$color-primary};
+
+    @media (min-width: $breakpoint-medium) {
+        --avatar-size: 4rem; 
+        --avatar-spacing: #{$spacing-small}; 
+    }
+}
+
+
+.person {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: end;
+    gap: var(--avatar-spacing);
+    margin: 0;
+    color: var(--avatar-color-text);
+
+    
+    &__name {
+        flex: 0;
+        text-align: end;
+        font-size: var(--avatar-font-size);
+        font-weight: 500;
+        line-height: 1.1;
+    }
+
+    &__avatar {
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}

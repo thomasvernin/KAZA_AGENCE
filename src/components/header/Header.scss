@@ -4,15 +4,15 @@
     --header-logo-width-viewport: 25vw;
 }
 
-// Styles for the Header component
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    // Styles for the logo inside the Header
+    
     &__logo {
-        // Use clamp() to responsively size the logo
+        
         width: clamp(
             var(--header-logo-width-min),
             var(--header-logo-width-viewport),

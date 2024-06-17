@@ -1,13 +1,12 @@
-// Définit les variables globales pour le thème du site 
 :root {
-    --footer-padding: 4rem 1.25rem 0; // Augmente l'espacement intérieur du pied de page
-    --footer-gap: 1rem; // Réduit l'espacement entre les éléments du pied de page
-    --logo-max-width: 10rem; // Augmente la largeur maximale du logo
-    --footer-background-color: #000; 
-    --footer-color: #fff; 
+    --footer-padding: 3.5rem 1.25rem 0;
+    --footer-gap: 1.25rem;
+    --logo-max-width: 9rem;
+    --footer-background-color: #000;
+    --footer-color: #fff;
 }
 
-// Styles pour le composant Footer 
+
 .footer {
     display: flex;
     flex-direction: column;
@@ -17,7 +16,7 @@
     background-color: var(--footer-background-color);
     color: var(--footer-color);
 
-    // Styles pour le logo à l'intérieur du Footer 
+    
     .logo {
         max-width: var(--logo-max-width);
     }

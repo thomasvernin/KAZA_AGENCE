@@ -1,8 +1,8 @@
-import Accordion from '@/components/collapes/Collapes'
+import Accordion from '@/components/accordion/Accordion'
 import Loader from '@/components/loader/Loader'
 import Person from '@/components/person/Person'
 import Rating from '@/components/rating/Rating'
-import TagList from '@/components/tagList/TagList'
+import TagList from '@/components/taglist/TagList'
 import logementsData from '@/data/logements.json'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
 import { useEffect } from 'react'
@@ -11,12 +11,6 @@ import Carousel from '../components/carousel/Carousel'
 import { useFetchData } from '../hooks/useFetchData'
 import './Accommodation.scss'
 
-/**
- * Hook personnalisé pour récupérer les données d'un logement en fonction de l'URL fournie.
- *
- * @param {string} url - L'URL pour récupérer les données.
- * @returns {Object} L'état de chargement et les données du logement.
- */
 const useAccommodation = (url) => {
     const { isLoading, data: accommodations } = useFetchData(url)
     const { id } = useParams()
@@ -27,10 +21,6 @@ const useAccommodation = (url) => {
     return { isLoading, accommodation }
 }
 
-/**
- * Composant Accommodation. Affiche les détails d'un logement.
- * @component
- */
 export default function Accommodation() {
     useScrollToTop()
     const navigate = useNavigate()
@@ -85,13 +75,13 @@ export default function Accommodation() {
                 )}
             </section>
             <section className="accommodation__details">
-                <h2 className="sr-only">Détails</h2>
                 <Accordion title="Description" content={description} />
                 <Accordion title="Équipements" content={equipments} />
             </section>
         </main>
     )
 }
+
 
 
 

@@ -5,12 +5,6 @@ import './Header.scss'
 import Logo from '../logo/Logo'
 import Nav from '../nav/Nav'
 
-/**
- * Représente le composant de l'en-tête de l'application.
- *
- * @param {Object[]} links - Les liens à afficher dans l'en-tête.
- * @returns {JSX.Element} Le composant de l'en-tête.
- */
 export default function Header() {
     return (
         <header className="header container">
@@ -26,7 +20,6 @@ export default function Header() {
     )
 }
 
-// Définition des types de props
 Header.propTypes = {
     links: PropTypes.objectOf(
         PropTypes.shape({
@@ -36,6 +29,7 @@ Header.propTypes = {
         })
     ),
 }
+
 
 
 

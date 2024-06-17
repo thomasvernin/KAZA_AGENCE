@@ -1,0 +1,24 @@
+@import "../../_vars.scss";
+
+
+:root {
+    --gallery-gap: #{$spacing-medium};
+    --gallery-gap-large: #{$spacing-large};
+    --gallery-min-column-width: 350px;
+    
+}
+
+
+.gallery {
+    display: grid;
+    gap: var(--gallery-gap);
+
+    
+    @media (min-width: $breakpoint-medium) {
+        gap: var(--gallery-gap-large);
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(var(--gallery-min-column-width), 1fr)
+        );
+    }
+}

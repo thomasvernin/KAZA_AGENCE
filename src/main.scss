@@ -1,0 +1,79 @@
+@import "./vars";
+
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+body > div {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 3.4375rem;
+    padding-block-start: 3.4375rem;
+    min-height: calc(100vh - 3.4375rem);
+    min-height: calc(100svh - 3.4375rem);
+}
+
+
+h1,
+h2 {
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: clamp(1.125rem, 5vw, 2.25rem);
+    line-height: 1.1;
+    color: $color-primary;
+}
+
+h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    line-height: 1.2;
+    color: $color-neutral-900;
+}
+
+
+ul[class] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a[class] {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
+}
+
+
+.container {
+    width: min(calc(100% - 3rem), 1240px);
+    margin-inline: auto;
+}
+
+
+
+
+

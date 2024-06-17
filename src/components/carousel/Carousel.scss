@@ -1,0 +1,86 @@
+@import "../../_vars.scss";
+
+
+:root {
+    --carousel-aspect-ratio: 335 / 255;
+    --carousel-aspect-ratio-large: 1240 / 415;
+    --carousel-text-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.35);
+    --carousel-text-shadow-hover: 0 0.225rem 0.225rem rgba(0, 0, 0, 0.25);
+}
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--carousel-aspect-ratio);
+    color: $color-neutral-0;
+    border-radius: $radius-small;
+    overflow: hidden;
+
+    
+    @media (min-width: $breakpoint-small) {
+        aspect-ratio: var(--carousel-aspect-ratio-large);
+    }
+
+    
+    &__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    &__image.visible {
+        opacity: 1;
+    }
+
+    
+    &__nav {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+    &__nav-prev,
+    &__nav-next {
+        display: grid;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: inherit;
+
+        filter: drop-shadow(var(--carousel-text-shadow));
+        transition: filter 0.3s, transform 0.3s;
+
+        
+        &:hover {
+            transform: scale3d(1.1, 1.1, 1);
+            filter: drop-shadow(var(--carousel-text-shadow-hover));
+        }
+    }
+
+    
+    &__nav-prev {
+        place-content: center start;
+    }
+
+    
+    &__nav-next {
+        place-content: center end;
+    }
+
+    &__pagination {
+        position: absolute;
+        bottom: $spacing-small;
+        left: 50%;
+        transform: translateX(-50%);
+        filter: drop-shadow(var(--carousel-text-shadow));
+        @media (max-width: $breakpoint-medium) {
+            display: none;
+        }
+    }
+}

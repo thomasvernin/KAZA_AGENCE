@@ -1,48 +1,45 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import './Chevron.scss';
 
-/**
-Rend un composant Chevron.
-
-@param {Object} props - Les props du composant.
-@param {string} props.direction - La direction du chevron ('left' ou 'right').
-@param {string} [props.color='currentColor'] - La couleur du chevron.
-@param {string} [props.size='5rem'] - La taille du chevron.
-@returns {JSX.Element} Le composant Chevron rendu.
-*/
 export default function Chevron({
     direction,
     color = 'currentColor',
     size = '5rem',
 }) {
-    // Chemin SVG pour le chevron pointant vers la gauche
-    const leftChevronPath = "M10 15l-6-6 6-6";
-    // Chemin SVG pour le chevron pointant vers la droite
-    const rightChevronPath = "M6 15l6-6-6-6";
-
     return (
         <svg
+            className="svg-chevron"
             xmlns="http://www.w3.org/2000/svg"
             width={size}
             height={size}
-            viewBox="0 0 20 20"
+            viewBox="0 0 47 79"
             fill={color}
         >
-            <path
-                d={direction === 'left' ? leftChevronPath : rightChevronPath}
-                fillRule="evenodd"
-                clipRule="evenodd"
-            />
+            {direction === 'left' ? (
+                <path
+                    d="M47.04 7.78312L39.92 0.703125L0.359985 40.3031L39.96 79.9031L47.04 72.8231L14.52 40.3031L47.04 7.78312Z"
+                    fill={color}
+                />
+            ) : (
+                <path
+                    d="M0.960022 72.3458L8.04002 79.4258L47.64 39.8258L8.04002 0.22583L0.960022 7.30583L33.48 39.8258L0.960022 72.3458Z"
+                    fill={color}
+                />
+            )}
         </svg>
-    );
+    )
 }
 
-// Définition des types de props
+
+
+
 Chevron.propTypes = {
     direction: PropTypes.oneOf(['left', 'right']).isRequired,
     color: PropTypes.string,
     size: PropTypes.string,
-};
+}
+
+
 
 
 

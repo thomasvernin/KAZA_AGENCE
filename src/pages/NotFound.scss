@@ -1,0 +1,34 @@
+@import "../vars.scss";
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $spacing-large;
+    height: 100%;
+
+    img {
+        width: 37rem; 
+        height: 16rem; 
+
+        @media (max-width: $breakpoint-large) {
+            width: 30rem;
+            height: 13rem;
+        }
+
+        @media (max-width: $breakpoint-medium) {
+            width: 25rem;
+            height: 11rem;
+        }
+
+        @media (max-width: $breakpoint-small) {
+            width: 13rem;
+            height: 6rem;
+        }
+    }
+
+    h1 {
+        text-align: center;
+    }
+}

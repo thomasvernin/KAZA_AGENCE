@@ -1,12 +1,5 @@
 import PropTypes from 'prop-types'
 
-/**
- * Composant Star
- *
- * @param {Object} props - Props de l'étoile
- * @param {string} props.fill - La couleur de remplissage de l'étoile
- * @returns {JSX.Element} JSX du composant Star
- */
 function Star({ fill }) {
     return (
         <svg
@@ -22,14 +15,6 @@ function Star({ fill }) {
     )
 }
 
-/**
- * Composant Rating
- * @param {Object} props - Props de la note
- * @param {number} props.score - La note à afficher
- * @param {string} props.activeColor - La couleur des étoiles actives
- * @param {string} props.mutedColor - La couleur des étoiles inactives
- * @returns {JSX.Element} JSX du composant Rating
- */
 export default function Rating({
     score,
     activeColor = '#000',
@@ -44,7 +29,6 @@ export default function Rating({
     )
 }
 
-// Définition des types de props
 Star.propTypes = {
     fill: PropTypes.string.isRequired,
 }
@@ -54,3 +38,4 @@ Rating.propTypes = {
     activeColor: PropTypes.string,
     mutedColor: PropTypes.string,
 }
+

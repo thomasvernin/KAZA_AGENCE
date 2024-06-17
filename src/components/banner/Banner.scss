@@ -1,19 +1,28 @@
+@import "../../_vars.scss";
+
+
 :root {
-    --banner-title-padding: 1rem;
+    --banner-title-padding: 16px;
     --banner-title-font-size: clamp(1.5rem, 5vw, 3rem);
-    --banner-title-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    --banner-title-shadow: 0 0,25rem 0,25rem rgba(0, 0, 0, 0.25);
     --banner-aspect-ratio: 1240 / 223;
+    --banner-border-radius: #{$radius-small};
     --banner-background-color: rgba(0, 0, 0, 0.5);
     --banner-min-height: 6.875rem;
+    @media (min-width: $breakpoint-medium) {
+        --banner-min-height: 14rem;
+        --banner-border-radius: #{$radius-large};
+    }
 }
 
-// Styling for the banner component
+
 .banner {
     position: relative;
     display: grid;
     place-items: center;
     min-height: var(--banner-min-height);
     border-radius: var(--banner-border-radius);
+    background-color: $color-primary;
     background-image: linear-gradient(
             to bottom,
             var(--banner-background-color),
@@ -23,4 +32,15 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
+
+    
+    &__title {
+        padding: var(--banner-title-padding);
+        margin: 0;
+        font-size: var(--banner-title-font-size);
+        text-shadow: var(--banner-title-shadow);
+        color: $color-neutral-0;
+        z-index: 1;
+        text-wrap: balance;
+    }
 }

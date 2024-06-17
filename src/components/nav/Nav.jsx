@@ -2,16 +2,6 @@ import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import './Nav.scss'
 
-/**
- * Rend le composant de navigation.
- * 
- * @param {JSON} links - Un tableau d'objets de lien.
- * @param {string} links.to - L'URL du lien.
- * @param {string} links.label - Le libellé du lien.
- * @param {string} links.ariaLabel - L'aria-label du lien.
- * @returns {JSX.Element} Le composant de navigation rendu.
- */
-
 export default function Nav({ links }) {
     if (!links || Object.keys(links).length === 0) {
         return null
@@ -36,8 +26,6 @@ export default function Nav({ links }) {
     )
 }
 
-// Définition des types de props
-
 Nav.propTypes = {
     links: PropTypes.objectOf(
         PropTypes.shape({
@@ -47,3 +35,4 @@ Nav.propTypes = {
         })
     ),
 }
+

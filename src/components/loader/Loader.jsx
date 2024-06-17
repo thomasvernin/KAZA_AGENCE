@@ -1,8 +1,5 @@
-/**
-Composant Loader qui affiche un spinner.
+import './Loader.scss'
 
-@returns {JSX.Element} Le composant Loader rendu.
-*/
 const Loader = () => (
     <div className="loader">
         <div className="double-bounce1"></div>
@@ -11,3 +8,4 @@ const Loader = () => (
 )
 
 export default Loader
+

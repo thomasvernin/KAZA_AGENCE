@@ -1,14 +1,11 @@
 import aboutBanner from '@/images/about-banner.jpg'
-import Collapes from '@/components/collapes/Collapes'
+import Accordion from '@/components/accordion/Accordion'
 import Banner from '@/components/banner/Banner'
 import Loader from '@/components/loader/Loader'
 import aboutData from '@/data/about.json'
 import { useFetchData } from '@/hooks/useFetchData'
 import './About.scss'
 
-/** 
-@returns {JSX.Element} 
-**/
 export default function About() {
     const { isLoading, data } = useFetchData(aboutData)
 
@@ -23,7 +20,7 @@ export default function About() {
                     <div>Pas de données disponibles</div>
                 ) : (
                     data.map((section, index) => (
-                        <Collapes
+                        <Accordion
                             key={index}
                             title={section.title}
                             content={section.content}
@@ -34,6 +31,7 @@ export default function About() {
         </main>
     )
 }
+
 
 
 

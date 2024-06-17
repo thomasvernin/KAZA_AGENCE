@@ -1,0 +1,19 @@
+@import "../../_vars.scss";
+
+
+.svg-chevron {
+    width: 5rem; 
+    height: 5rem; 
+
+    @media (max-width: $breakpoint-medium) {
+        width: 1rem; 
+        height: 1rem; 
+    }
+}
+
+   
+
+
+
+
+
