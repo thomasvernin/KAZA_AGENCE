@@ -4,7 +4,7 @@
 :root {
     --banner-title-padding: 16px;
     --banner-title-font-size: clamp(1.5rem, 5vw, 3rem);
-    --banner-title-shadow: 0 0,25rem 0,25rem rgba(0, 0, 0, 0.25);
+    
     --banner-aspect-ratio: 1240 / 223;
     --banner-border-radius: #{$radius-small};
     --banner-background-color: rgba(0, 0, 0, 0.5);

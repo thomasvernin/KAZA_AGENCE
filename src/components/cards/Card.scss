@@ -1,7 +1,7 @@
 @import "../../_vars.scss";
 
 :root {
-    --card-aspect-ratio: 335 / 255;
+    --card-aspect-ratio: 340 / 340;
     --card-title-font-size: 1.125rem;
     --card-padding: #{$spacing-medium};
     @media (min-width: $breakpoint-medium) {
