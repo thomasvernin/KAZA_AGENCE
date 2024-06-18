@@ -10,6 +10,7 @@
     --accordion-title-background-color: #{$color-primary};
     --accordion-title-color: #{$color-neutral-0};
     --accordion-title-weight: 700;
+
     @media (min-width: $breakpoint-medium) {
         --accordion-padding: 0.875rem 1rem;
         --accordion-title-size: 1.125rem;
@@ -22,6 +23,7 @@
     border-radius: var(--accordion-border-radius);
     overflow: hidden;
     width: 100%;
+    transition: max-height 0.3s ease; 
 
     &__title,
     &__content {
@@ -45,29 +47,14 @@
             background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 512 512'><path fill='white' d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7L86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/></svg>");
             background-size: contain;
             background-position: center;
-            transition: transform 0.1s;
+            transition: transform 0.7s ease; 
+            transform: rotate(180deg); 
         }
     }
 
-
-
- 
-
-
-   
-    
-
-
-
-
-
-    
-    
-
-
-
-    
-
+    &__icon {
+        transition: transform 0.7s ease; 
+    }
 
     &__content {
         font-size: var(--accordion-content-size);
@@ -77,10 +64,17 @@
         }
     }
 
-    &[open] {
+    &.open {
         .accordion__title::after {
-            transform: scale3d(1, -1, 1);
+            transform: rotate(0deg); 
         }
     }
 }
+
+
+
+
+
+
+
 
